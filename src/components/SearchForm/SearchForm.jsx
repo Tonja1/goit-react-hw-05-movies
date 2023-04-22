@@ -16,7 +16,7 @@ export const SearchForm = ({ onSubmit }) => {
     };
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <InputStyled
                 value={search}
                 onChange={onInputChange}
