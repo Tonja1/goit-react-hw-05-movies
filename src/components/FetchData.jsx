@@ -6,7 +6,7 @@ export const IMAGE_URL = `https://image.tmdb.org/t/p/w500`;
 
 export const FetchTrending = async () => {
     return await axios.get(
-        `${BASE_URL}tranding/all/day?api_key=${API_KEY}`
+        `${BASE_URL}trending/all/day?api_key=${API_KEY}`
     );
 };
 
