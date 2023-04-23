@@ -17,5 +17,5 @@ ReviewsList.propTypes = {
             id: PropTypes.string,
             content: PropTypes.string,
         })
-    ).isRequired
+    ).isRequired,
 };

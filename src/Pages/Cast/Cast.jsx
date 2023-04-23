@@ -4,20 +4,18 @@ import { CastList } from "components/CastList/CastList";
 
 import { List, Message } from "./CastStyled";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 
 const Cast = () => {
     const [castItems, setCastItems] = useState([]);
-    const [error, setError] = useState("");
+    const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
     const { movieId } = useParams();
 
     useEffect(() => {
         setLoading(true);
-
         const getCast = async () => {
             try {
                 const castData = await FetchCast(movieId);
@@ -33,7 +31,7 @@ const Cast = () => {
 
     return (
         <>
-            {error && <p>{error.message}</p>}
+            {error && <p>{error.massage}</p>}
             {loading && <Spinner />}
             {castItems.length !== 0 ? (
                 <List>
