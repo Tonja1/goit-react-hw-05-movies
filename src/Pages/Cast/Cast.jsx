@@ -31,7 +31,7 @@ const Cast = () => {
 
     return (
         <>
-            {error && <p>{error.massage}</p>}
+            {error && <p>{error.message}</p>}
             {loading && <Spinner />}
             {castItems.length !== 0 ? (
                 <List>
