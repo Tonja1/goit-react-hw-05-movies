@@ -12,7 +12,7 @@ const Reviews = () => {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const movieId = useParams();
+    const {movieId} = useParams();
 
     useEffect(() => {
         setLoading(true);
