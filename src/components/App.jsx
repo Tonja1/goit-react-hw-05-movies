@@ -9,6 +9,7 @@ const SearchMovies = lazy(() => import('../Pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('../Pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../Pages/Cast/Cast'));
 const Reviews = lazy(() => import('../Pages/Reviews/Reviews'));
+const NotFound = lazy(() => import('../Pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<NavBar />}>
+            <Route path="error" element={<NotFound />}/>
             <Route index element={<HomePage />} />
             <Route path="/movies" element={<SearchMovies />} />
             <Route path="/movies/:movieId" element={<MovieDetails />}>
