@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   useParams,
-  useNavigate,
+  // useNavigate,
   Link,
   Outlet,
   useLocation,
@@ -20,6 +20,7 @@ import {
   GoBackBtn,
   ItemLink,
 } from '../MovieDetails/MovieDetailsStyled';
+import { useRef } from 'react';
 
 
 const MovieDetails = () => {
@@ -29,12 +30,12 @@ const MovieDetails = () => {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const comeFrom = location.state?.from ?? '/movies';
+  const beckLinkLocationRef = useRef(location.state?.from ?? '/movies');
 
-  console.log(comeFrom);
-  const navigate = useNavigate();
+  // console.log(comeFrom);
+  // const navigate = useNavigate();
 
-  const goBack = () => navigate(comeFrom);
+  // const goBack = () => navigate(comeFrom);
 
   useEffect(() => {
     setLoading(true);
@@ -74,21 +75,24 @@ const MovieDetails = () => {
               <TextContent>
                 {genres && `${genres.map(genre => genre.name).join(' ')}`}
               </TextContent>
-              <GoBackBtn type="button" onClick={goBack}>
+              
+              <GoBackBtn type="button" to={beckLinkLocationRef.current}>
                 Go back
               </GoBackBtn>
+              
+              
             </div>
           </Info>
           <div>
             <SubTitle>Additional information</SubTitle>
             <ul>
               <ItemLink>
-                <Link state={comeFrom} to={`/movies/${movieId}/cast`}>
+                <Link to={`/movies/${movieId}/cast`}>
                   Cast
                 </Link>
               </ItemLink>
               <ItemLink>
-                <Link state={comeFrom} to={`/movies/${movieId}/reviews`}>
+                <Link to={`/movies/${movieId}/reviews`}>
                   Reviews
                 </Link>
               </ItemLink>
