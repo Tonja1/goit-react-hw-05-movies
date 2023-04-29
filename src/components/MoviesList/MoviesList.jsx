@@ -9,8 +9,8 @@ export const MoviesList = ({ movies }) => {
 
     return movies.map(({ id, title, name }) => (
         <Item key={id}>
-            <Link state={{ from: location }} to={`/movies/${id}`}>
-                {title || name}
+            <Link state={{ from: location }} to={`/movies/${id}`} cover={name}>
+                {title}
             </Link>
         </Item>
     ));

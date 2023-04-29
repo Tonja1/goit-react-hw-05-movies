@@ -12,9 +12,9 @@ const HomePage = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true);
-
-        const FetchTrendingMovies = async () => {
+        
+       const FetchTrendingMovies = async () => {
+            setLoading(true);
             try {
                 const trendingMovies = await FetchTrending();
 

@@ -21,6 +21,7 @@ import {
   ItemLink,
 } from '../MovieDetails/MovieDetailsStyled';
 
+
 const MovieDetails = () => {
   const [singleMovie, setSingleMovie] = useState({});
   const [error, setError] = useState('');
@@ -28,7 +29,7 @@ const MovieDetails = () => {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const comeFrom = location.state?.from ?? '/';
+  const comeFrom = location.state?.from ?? '/movies';
 
   console.log(comeFrom);
   const navigate = useNavigate();

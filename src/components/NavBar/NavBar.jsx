@@ -1,7 +1,8 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { Nav, NavList, NavLink } from './NavBarStyled';
 
 const NavBar = () => {
+    const location = useLocation
     return (
         <>
             <Nav>
@@ -10,7 +11,7 @@ const NavBar = () => {
                         <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/Movies">Movies</NavLink>
+                        <NavLink to="/Movies" state={{from: location}}>Movies</NavLink>
                     </li>
                 </NavList>
             </Nav>
