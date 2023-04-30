@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import {
   useParams,
-  useNavigate,
+  // useNavigate,
   Link,
   Outlet,
   useLocation,
@@ -32,9 +32,9 @@ const MovieDetails = () => {
   const comeFrom = useRef(location.state?.from ?? '/movies');
 
   console.log(comeFrom);
-  const navigate = useNavigate();
+  // const navigate = useNavigate(comeFrom);
 
-  const goBack = () => navigate(comeFrom);
+  // const goBack = () => navigate(comeFrom);
 
   useEffect(() => {
     setLoading(true);
@@ -74,7 +74,7 @@ const MovieDetails = () => {
               <TextContent>
                 {genres && `${genres.map(genre => genre.name).join(' ')}`}
               </TextContent>
-              <GoBackBtn to={comeFrom.current} type="button" onClick={goBack}>
+              <GoBackBtn type="button" to={comeFrom.current}>
                 Go back
               </GoBackBtn>
             </div>
