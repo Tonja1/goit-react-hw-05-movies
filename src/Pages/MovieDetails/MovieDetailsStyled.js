@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const MovieContainer = styled.div`
@@ -32,7 +33,7 @@ export const SubTitle = styled.h3`
   color: #483d8b;
 `;
 
-export const GoBackBtn = styled.button`
+export const GoBackBtn = styled(Link)`
   width: 120px;
   font-size: 20px;
   font-weight: 600;
